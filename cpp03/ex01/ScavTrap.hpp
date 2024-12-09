@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 15:51:04 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/03 16:36:22 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/11/27 14:57:28 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/03 15:50:55 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# ifndef STRING
+#  include <string>
+# endif
+# ifndef IOSTREAM
+#  include <iostream>
+# endif
+# include "ClapTrap.hpp"
 
-int	main(){
-	FragTrap milady("milady");
-	FragTrap no_u;
-	FragTrap &refe = milady;
-	
+class ScavTrap : public ClapTrap{
+private:
 
-	milady.attack("someone");
-	milady.takeDamage(0);
-	milady.takeDamage(5);
-	milady.beRepaired(25);
-	no_u.attack("milady");
-	refe.takeDamage(0);
-	refe.highFiveGuys();
-	no_u = milady;
-	(void)refe;
-	no_u.takeDamage(0);
-}
+public:
+
+	ScavTrap(std::string str);
+	ScavTrap();
+	~ScavTrap();
+	ScavTrap(const ScavTrap &to_cpy);
+
+	void	GuardGate();
+};
+
+#endif

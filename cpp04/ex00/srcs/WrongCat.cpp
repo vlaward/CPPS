@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 15:51:04 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/03 16:36:22 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/05 18:24:22 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/05 18:52:20 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "WrongCat.hpp"
 
-int	main(){
-	FragTrap milady("milady");
-	FragTrap no_u;
-	FragTrap &refe = milady;
-	
-
-	milady.attack("someone");
-	milady.takeDamage(0);
-	milady.takeDamage(5);
-	milady.beRepaired(25);
-	no_u.attack("milady");
-	refe.takeDamage(0);
-	refe.highFiveGuys();
-	no_u = milady;
-	(void)refe;
-	no_u.takeDamage(0);
+WrongCat::WrongCat(){
+	this->type = "WrongCat";
+	std::cout << "WrongCat constructor called\n";
 }
+
+WrongCat::~WrongCat(){std::cout << "WrongCat destructors called\n";}
+
+void	WrongCat::makeSound()  const {std::cout << "Wrong MEEEEEEEOW :3\n";}

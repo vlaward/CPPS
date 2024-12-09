@@ -1,12 +1,14 @@
-NAME=ScavTrap
-SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+NAME=Animals
+SRCS_PATH=srcs/
+CPPS=main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS= $(addprefix $(SRCS_PATH), $(CPPS))
 OBJS=$(SRCS:.cpp=.o)
 FLAGS= -Wall -Werror -Wextra
 CC=clang++
 
 
 %.o : %.cpp
-	$(CC) $(FLAGS) -c $<
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

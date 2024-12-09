@@ -5,28 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 15:51:04 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/03 16:36:22 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/05 18:28:41 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/05 18:48:43 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-int	main(){
-	FragTrap milady("milady");
-	FragTrap no_u;
-	FragTrap &refe = milady;
-	
+int main()
+{
+	{
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		const Animal* meta = new Animal();
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
 
-	milady.attack("someone");
-	milady.takeDamage(0);
-	milady.takeDamage(5);
-	milady.beRepaired(25);
-	no_u.attack("milady");
-	refe.takeDamage(0);
-	refe.highFiveGuys();
-	no_u = milady;
-	(void)refe;
-	no_u.takeDamage(0);
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		meta->makeSound();
+
+		delete j; //should not create a leak
+		delete i;
+		delete meta;
+	}
+	{
+		const WrongAnimal * cat = new WrongCat();
+		
+		cat->makeSound();
+		delete cat;
+	}
 }

@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 15:51:04 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/03 16:36:22 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/05 18:05:55 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/05 18:44:29 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
 
-int	main(){
-	FragTrap milady("milady");
-	FragTrap no_u;
-	FragTrap &refe = milady;
-	
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
+# include <string>
+# include <iostream>
 
-	milady.attack("someone");
-	milady.takeDamage(0);
-	milady.takeDamage(5);
-	milady.beRepaired(25);
-	no_u.attack("milady");
-	refe.takeDamage(0);
-	refe.highFiveGuys();
-	no_u = milady;
-	(void)refe;
-	no_u.takeDamage(0);
-}
+class WrongAnimal {
+protected:
+	std::string type;
+
+public:
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &to_cpy);
+	WrongAnimal&	operator=(const WrongAnimal &to_cpy);
+	virtual ~WrongAnimal();
+
+	std::string getType() const ;
+	void	makeSound() const;
+};
+
+
+#endif

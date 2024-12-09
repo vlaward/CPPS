@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 14:57:28 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/11/27 15:53:13 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:59:52 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # endif
 
 class ClapTrap{
-private:
+protected:
 	std::string name;
 	int	hit_points;
 	int	energy_points;

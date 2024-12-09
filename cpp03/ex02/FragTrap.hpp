@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 15:51:04 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/03 16:36:22 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/11/27 14:57:28 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/03 16:34:36 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef FragTRAP_HPP
+# define FragTRAP_HPP
+# ifndef STRING
+#  include <string>
+# endif
+# ifndef IOSTREAM
+#  include <iostream>
+# endif
+# include "ClapTrap.hpp"
 
-int	main(){
-	FragTrap milady("milady");
-	FragTrap no_u;
-	FragTrap &refe = milady;
-	
+class FragTrap : public ClapTrap{
+private:
 
-	milady.attack("someone");
-	milady.takeDamage(0);
-	milady.takeDamage(5);
-	milady.beRepaired(25);
-	no_u.attack("milady");
-	refe.takeDamage(0);
-	refe.highFiveGuys();
-	no_u = milady;
-	(void)refe;
-	no_u.takeDamage(0);
-}
+public:
+
+	FragTrap(std::string str);
+	FragTrap();
+	~FragTrap();
+	FragTrap(const FragTrap &to_cpy);
+
+	void	highFiveGuys();
+};
+
+#endif
