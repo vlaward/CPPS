@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:24:22 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/05 18:52:20 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/09 18:09:47 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Cat.hpp"
 
-WrongCat::WrongCat(){
-	this->type = "WrongCat";
-	std::cout << "WrongCat constructor called\n";
+Cat::Cat(){
+	std::cout << "Cat constructor called\n";
+	this->type = "Cat";
+	this->thoughs = new Brain();
 }
 
-WrongCat::~WrongCat(){std::cout << "WrongCat destructors called\n";}
+Cat::~Cat(){
+	std::cout << "Cat destructor called\n";
+	delete(this->thoughs);
+}
 
-void	WrongCat::makeSound()  const {std::cout << "Wrong MEEEEEEEOW :3\n";}
+Cat&	Cat::operator=(const Cat &to_cpy){
+	if (this == &to_cpy)
+		return (*this);
+	this->type = to_cpy.type;
+	*this->thoughs = *to_cpy.thoughs;
+	return (*this);
+}
+
+
+void	Cat::makeSound() const {std::cout << "MEEEEEEEOW :3\n";}

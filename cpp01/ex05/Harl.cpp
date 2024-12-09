@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:28:21 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/11/19 17:01:03 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:15:23 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ void	Harl::complain(std::string level){
 }
 
 void	Harl::debug(){
-	std::cout << "Alors, pour ta gouverne, la valeur de i c'est 4. T'en fait ce que tu veux <3\n";
+	std::cout << "POUR TA GOUVERNE : la valeur de i c'est 4. T'en fait ce que tu veux <3" << std::endl;
 }
 
 void	Harl::info(){
-	std::cout << "FLASH INFO :\n -la valeur de i a un impacte MAJEUR sur l'ecosystem terrien, il faut la reguler a tout prix!! \n";
+	std::cout << "FLASH INFO : la valeur de i a un impacte MAJEUR sur l'ecosystem terrien, il faut la reguler a tout prix!! " << std::endl;
 }
 
 void	Harl::warning(){
-	std::cout << "ATTENTION : la valeur de i a augmenter, a ce rythme ca ne seras pas que les especes rare qui cont s'eteindre\n";	
+	std::cout << "ATTENTION : la valeur de i a augmenter, a ce rythme ca ne seras pas que les especes rare qui cont s'eteindre" << std::endl;	
 }
 
 void	Harl::error(){
-	std::cout << "ERROR 404 : Life not found\n";
+	std::cout << "ERROR 404 : Life not found" << std::endl;
 }
 

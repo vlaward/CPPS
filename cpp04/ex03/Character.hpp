@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 16:01:28 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/09 16:02:05 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/09 18:41:10 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 19:47:25 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+# include <string>
+# include "AMateria.hpp"
 
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
+class ICharacter
+{
+private:
+	AMateria	*inventair[4];
+	std::string	name;
+public:
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
+};
 
-
-int	main(){
-	Zombie	*zomb_there = zombieHorde(4, "pablo");
-
-	for (int i = 0 ; i < 4 ; i++)
-		zomb_there[i].Announce();
-	delete[] zomb_there;
-	return 1;
-}
-
+#endif

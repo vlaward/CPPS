@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:27:43 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/11/13 15:45:05 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:06:21 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	main(){
 	std::string	&stringREF = str;
 
 	std::cout << "voici l'adresse de str :" << &str << std::endl;
-	std::cout << "voici l'adresse d'un pointeur de str :" << stringPTR << std::endl;
-	std::cout << "voici l'adresse d'une reference de str :" << &stringREF << std::endl;
+	std::cout << "voici l'adresse contenus dans stringPTR :" << stringPTR << std::endl;
+	std::cout << "voici l'adresse contenus dans stringREF :" << &stringREF << std::endl;
 
 	std::cout << "voici la valeur stockee dans str :" << str << std::endl;
-	std::cout << "voici la valeur stockee dans un pointeur de str :" << *stringPTR << std::endl;
-	std::cout << "voici la valeur stockee dans une reference de str :" << stringREF << std::endl;
+	std::cout << "voici la valeur stockee dans stringPTR :" << *stringPTR << std::endl;
+	std::cout << "voici la valeur stockee dans stringREF :" << stringREF << std::endl;
 
 }

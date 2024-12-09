@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 16:01:28 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/09 16:02:05 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/09 16:46:49 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 18:07:37 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Brain.hpp"
 
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
+Brain::Brain(){std::cout << "Brain Created" << std::endl;}
 
+Brain::~Brain(){std::cout << "Brain destroyed muahahah" << std::endl;}
 
-int	main(){
-	Zombie	*zomb_there = zombieHorde(4, "pablo");
+Brain::Brain(const Brain &to_cpy){*this = to_cpy;}
 
-	for (int i = 0 ; i < 4 ; i++)
-		zomb_there[i].Announce();
-	delete[] zomb_there;
-	return 1;
+Brain	&Brain::operator=(const Brain &to_cpy){
+	if (this == &to_cpy){return *this;}
+	for (int i = 0 ; i < 100 ; i++)
+		this->ideas[i] = to_cpy.ideas[i];
+	return *this;
 }
-

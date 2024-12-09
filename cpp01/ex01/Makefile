@@ -1,5 +1,5 @@
 NAME=test
-SRCS=Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS=Zombie.cpp main.cpp
 OBJS=$(SRCS:.cpp=.o)
 FLAGS = -Werror -Wall -Wextra -std=c++98
 CC=c++

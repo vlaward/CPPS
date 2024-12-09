@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 16:01:31 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 16:01:33 by ncrombez         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 Zombie::Zombie(void){
@@ -25,3 +37,16 @@ Zombie*	zombieHorde(int N, std::string name){
 		ret[i].SetName(name);
 	return (ret);
 }
+
+void	randomChump(std::string name){
+	Zombie tmp(name);
+
+	tmp.Announce(); 
+}
+
+Zombie*	newZombie(std::string name){
+	Zombie *ret = new Zombie(name);
+	return (ret);
+}
+
+

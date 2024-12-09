@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:11:38 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/05 18:50:37 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:50:27 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-WrongAnimal::WrongAnimal(){std::cout << "WrongAnimal constructor called\n";}
+Animal::Animal(){std::cout << "Animal constructor called\n";}
 
-WrongAnimal::~WrongAnimal(){std::cout << "WrongAnimal destructor called\n";}
+Animal::~Animal(){std::cout << "Animal destructor called\n";}
 
-WrongAnimal::WrongAnimal(const WrongAnimal &to_cpy){*this = to_cpy;}
+Animal::Animal(const Animal &to_cpy){*this = to_cpy;}
 
-WrongAnimal&	WrongAnimal::operator=(const WrongAnimal &to_cpy){
+Animal&	Animal::operator=(const Animal &to_cpy){
 	if (this == &to_cpy)
 		return (*this);
 	this->type = to_cpy.type;
 	return (*this);
 }
 
-std::string	WrongAnimal::getType()const {return (this->type);}
+std::string	Animal::getType() const {return (this->type);}
 
-void	WrongAnimal::makeSound() const {std::cout << "*WrongAnimal Sound CWARKAAAAARGh*\n";}
+void	Animal::makeSound() const {std::cout << "*Animal Sound CWARKAAAAARGh*\n";}

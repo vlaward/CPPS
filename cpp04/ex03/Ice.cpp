@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 16:01:28 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/09 16:02:05 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/09 19:44:20 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 19:55:42 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Ice.hpp"
 
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
+Ice::Ice(){
+	std::cout << "Ice constructor called" << std::endl;
+	this->type = "ice";
+}	
 
-
-int	main(){
-	Zombie	*zomb_there = zombieHorde(4, "pablo");
-
-	for (int i = 0 ; i < 4 ; i++)
-		zomb_there[i].Announce();
-	delete[] zomb_there;
-	return 1;
+void	Ice::use(ICharacter &target){
+	std::cout << "*shots an ice bolte at " << target.getName() << "*" << std::endl;
 }
 
+AMateria *Ice::clone() const{return (new Ice());}
+
+const Ice &Ice::operator=(const Ice &to_cpy){
+	if (this == &to_cpy)
+		return (*this);
+	this->type = to_cpy.type;
+	return (*this);
+}

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 17:47:52 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/05 18:44:06 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/09 16:42:04 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 18:04:11 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 # include <string>
 # include <iostream>
 
-class Animal {
-protected:
-	std::string type;
 
+class Brain
+{
+private:
+	std::string	ideas[100];
 public:
-	Animal();
-	Animal(const Animal &to_cpy);
-	Animal&	operator=(const Animal &to_cpy);
-	virtual ~Animal();
-
-	std::string getType() const ;
-	virtual void	makeSound() const;
+	Brain();
+	Brain(const Brain &to_cpy);
+	~Brain();
+	Brain	&operator=(const Brain &to_cpy);
 };
-
 
 #endif

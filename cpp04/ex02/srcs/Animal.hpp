@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 15:23:26 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/11/13 15:23:27 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/05 17:47:52 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 18:29:30 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <string>
+# include <iostream>
 
-Zombie*	newZombie(std::string name){
-	Zombie *ret = new Zombie(name);
-	return (ret);
-}
+class Animal {
+protected:
+	std::string type;
+	Animal();
+
+public:
+	Animal(const Animal &to_cpy);
+	Animal&	operator=(const Animal &to_cpy);
+	virtual ~Animal();
+
+	std::string getType() const ;
+	virtual void	makeSound() const;
+};
+
+
+#endif

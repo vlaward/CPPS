@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 16:01:28 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/09 16:02:05 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/05 18:05:19 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 17:00:09 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
+#ifndef CAT_HPP
+# define CAT_HPP
+# include <string>
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Cat : public Animal{
+private:
+	Brain	*thoughs;
+public:
+	Cat();
+	~Cat();
+	Cat&	operator=(const Cat &to_cpy);
+
+	void makeSound() const;
+};
 
 
-int	main(){
-	Zombie	*zomb_there = zombieHorde(4, "pablo");
-
-	for (int i = 0 ; i < 4 ; i++)
-		zomb_there[i].Announce();
-	delete[] zomb_there;
-	return 1;
-}
-
+#endif

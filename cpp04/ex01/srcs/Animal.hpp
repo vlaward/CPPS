@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 16:01:28 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/09 16:02:05 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/05 17:47:52 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 16:55:46 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <string>
+# include <iostream>
 
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
+class Animal {
+protected:
+	std::string type;
+
+public:
+	Animal();
+	Animal(const Animal &to_cpy);
+	virtual Animal&	operator=(const Animal &to_cpy);
+	virtual ~Animal();
+
+	std::string getType() const ;
+	virtual void	makeSound() const;
+};
 
 
-int	main(){
-	Zombie	*zomb_there = zombieHorde(4, "pablo");
-
-	for (int i = 0 ; i < 4 ; i++)
-		zomb_there[i].Announce();
-	delete[] zomb_there;
-	return 1;
-}
-
+#endif

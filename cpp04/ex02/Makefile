@@ -1,6 +1,6 @@
 NAME=Animals
 SRCS_PATH=srcs/
-CPPS=main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+CPPS=main.cpp Animal.cpp Dog.cpp Cat.cpp
 SRCS= $(addprefix $(SRCS_PATH), $(CPPS))
 OBJS=$(SRCS:.cpp=.o)
 FLAGS= -Wall -Werror -Wextra

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 18:05:55 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/05 18:44:29 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/09 18:42:43 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/09 19:54:51 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 # include <string>
+# include "Character.hpp"
 # include <iostream>
-
-class WrongAnimal {
+class AMateria
+{
 protected:
-	std::string type;
-
+	std::string	type;
+	AMateria();
 public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal &to_cpy);
-	WrongAnimal&	operator=(const WrongAnimal &to_cpy);
-	virtual ~WrongAnimal();
-
-	std::string getType() const ;
-	void	makeSound() const;
+	AMateria(std::string const & type);
+	AMateria(const AMateria &to_cpy);
+	virtual const AMateria &operator=(const AMateria &to_cpy);
+	virtual ~AMateria();
+	
+	std::string const & getType() const; //Returns the materia type
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
 };
-
 
 #endif
