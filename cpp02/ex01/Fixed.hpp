@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:20:22 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/11/20 19:33:34 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:16:27 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Fixed
 {
 private:
 	int	integer;
-	const int	dist_comma = 8;
+	static const int	dist_comma = 8;
 public:
 	Fixed(void);
 	Fixed(const int the_one);

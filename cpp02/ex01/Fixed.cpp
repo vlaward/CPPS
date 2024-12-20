@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:35:25 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/11/27 15:18:02 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:32:24 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Fixed	&Fixed::operator=(const Fixed &to_copy){
 	std::cout << "Copy assignement called\n";
 	if (this == &to_copy)
 		return (*this);
-	this->integer = to_copy.getRawBits();
+	this->integer = to_copy.integer;
 	return (*this);
 }
 

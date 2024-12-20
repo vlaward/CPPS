@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 19:31:48 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/09 19:54:59 by ncrombez         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:21:33 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	~Ice();
 	const Ice &operator=(const Ice &to_cpy);
 
-	AMateria* clone() const = 0;
+	AMateria* clone() const;
 	void use(ICharacter& target);
 };
 

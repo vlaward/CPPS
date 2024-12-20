@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 19:44:20 by ncrombez          #+#    #+#             */
-/*   Updated: 2024/12/11 12:28:11 by ncrombez         ###   ########.fr       */
+/*   Created: 2024/12/11 12:26:29 by ncrombez          #+#    #+#             */
+/*   Updated: 2024/12/11 12:27:57 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
-Ice::Ice(){
-	std::cout << "Ice constructor called" << std::endl;
-	this->type = "ice";
+Cure::Cure(){
+	std::cout << "Cure constructor called" << std::endl;
+	this->type = "Cure";
 }	
 
-void	Ice::use(ICharacter &target){
-	std::cout << "* shots an ice bolte at " << target.getName() << " *" << std::endl;
+void	Cure::use(ICharacter &target){
+	std::cout << "* heals " << target.getName() << "'s wonds *" << std::endl;
 }
 
-AMateria *Ice::clone() const{return (new Ice());}
+AMateria *Cure::clone() const{return (new Cure());}
 
-const Ice &Ice::operator=(const Ice &to_cpy){
+const Cure &Cure::operator=(const Cure &to_cpy){
 	if (this == &to_cpy)
 		return (*this);
 	this->type = to_cpy.type;
