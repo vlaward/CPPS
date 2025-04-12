@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 18:21:29 by ncrombez          #+#    #+#             */
-/*   Updated: 2025/04/04 11:39:02 by ncrombez         ###   ########.fr       */
+/*   Updated: 2025/04/09 05:37:57 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Bureaucrat::changeGrade(int change){
 	else {_grade = grade;}
 }
 
-void	Bureaucrat::signForm(Form toSign){
+void	Bureaucrat::signForm(AForm & toSign){
 	try{
 		toSign.beSigned(*this);
 		std::cout << _name << " signed " << toSign.getName()

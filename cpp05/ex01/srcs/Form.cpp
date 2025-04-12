@@ -47,6 +47,7 @@ void	Form::beSigned(Bureaucrat const &bubu){
 
 
 
+
 const char* Form::GradeTooHighException::what() const throw(){
 	return "Grade is too high!";
 }

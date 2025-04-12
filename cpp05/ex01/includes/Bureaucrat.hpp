@@ -6,7 +6,7 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 18:11:51 by ncrombez          #+#    #+#             */
-/*   Updated: 2025/04/04 11:27:07 by ncrombez         ###   ########.fr       */
+/*   Updated: 2025/04/09 05:17:25 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <iostream>
 
 
-class Bureaucrat;
-#include "Form.hpp"
+class Form;
+# include "Form.hpp"
+
 class Bureaucrat {
 private:
 	int					_grade;
