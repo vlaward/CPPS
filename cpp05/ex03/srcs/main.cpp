@@ -6,26 +6,25 @@
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 18:25:34 by ncrombez          #+#    #+#             */
-/*   Updated: 2025/04/14 14:11:31 by ncrombez         ###   ########.fr       */
+/*   Updated: 2025/04/21 02:50:35 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreation.hpp"
+#include "Intern.hpp"
 
 int	main(){
 {
 	try{
-		Bureaucrat bob("bob", 60);
-		Bureaucrat marie("Marie", 150);
-		ShrubberyCreationForm 		shrub("PATABOOM");
+		Intern bob;
+		Bureaucrat marie("Marie", 1);
+		AForm 		*shrub = bob.makeForm("shrubbery creation", "mon_reuf");
 
-		std::cout << bob << std::endl;
+
 		std::cout << marie << std::endl;
-		std::cout << shrub << std::endl;
-		marie.signForm(shrub);
-		bob.signForm(shrub);
-		bob.executeForm(shrub);
+		std::cout << *shrub << std::endl;
+		marie.signForm(*shrub);
+		marie.executeForm(*shrub);
 		
 		
 	}

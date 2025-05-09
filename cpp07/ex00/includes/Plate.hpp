@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardon.hpp                             :+:      :+:    :+:   */
+/*   Plate.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 04:32:00 by ncrombez          #+#    #+#             */
-/*   Updated: 2025/04/14 14:01:26 by ncrombez         ###   ########.fr       */
+/*   Created: 2025/04/26 20:54:18 by ncrombez          #+#    #+#             */
+/*   Updated: 2025/04/29 07:49:19 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDON_HPP
-# define PRESIDENTIALPARDON_HPP
+#ifndef PLATE_HPP
+# define PLATE_HPP
 
+template<typename T>
+void	swap(T &a, T &b){
+	T	&tmp = b;
 
-# include "AForm.hpp"
+	b = a;
+	a = tmp;
+}
 
+template<typename T>
+T	&max(T &a, T &b){
+	return a > b ? a : b;
+}
 
-class PresidentialPardonForm : public AForm
-{
-public:
-	PresidentialPardonForm(std::string const &target);
-	PresidentialPardonForm(const PresidentialPardonForm &to_cpy);
-	~PresidentialPardonForm();
-
-	void	formExecute();
-};
-
+template<typename T>
+T	&min(T &a, T &b){
+	return a < b ? a : b;
+}
 #endif

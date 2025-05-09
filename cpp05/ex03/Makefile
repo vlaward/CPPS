@@ -1,6 +1,6 @@
 NAME=Bureaucrat
 SRCS_PATH=srcs/
-CPPS= Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardon.cpp RobotomyRequest.cpp ShrubberyCreation.cpp
+CPPS= Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardon.cpp RobotomyRequest.cpp ShrubberyCreation.cpp Intern.cpp
 SRCS= $(addprefix $(SRCS_PATH), $(CPPS))
 OBJS=$(SRCS:.cpp=.o)
 INCLUDES= -I ./includes

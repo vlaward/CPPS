@@ -11,18 +11,24 @@
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 
 //constructor'n shenanigans
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExec) : _gradeToSign(gradeToSign), _gradeToExec(gradeToExec), _name(name){
+AForm::AForm(std::string name, int gradeToSign, int gradeToExec, std::string const &target) :
+	_gradeToSign(gradeToSign),
+	_gradeToExec(gradeToExec),
+	_name(name),
+	_target(target)
+{
 	if (gradeToSign < 1 || gradeToExec < 1)
 		throw AForm::GradeTooHighException();
 	if (gradeToSign > 150 || gradeToExec > 150)
 		throw AForm::GradeTooLowException();
 }
 
-AForm::~AForm(){}
+AForm::~AForm(void){}
 
 AForm::AForm(AForm const &to_cpy) :
 _gradeToSign(to_cpy.getGradeToSign()),
@@ -33,8 +39,10 @@ _name(to_cpy.getName())
 }
 
 AForm& AForm::operator=(const AForm &to_cpy){
-	if (this != &to_cpy)
+	if (this != &to_cpy){
 		_isSigned = to_cpy.isSigned();
+		_target = to_cpy.getTarget();
+	}
 	return (*this);
 }
 
@@ -42,6 +50,7 @@ AForm& AForm::operator=(const AForm &to_cpy){
 //Getters
 
 const std::string	AForm::getName() const{ return _name;}
+const std::string	AForm::getTarget() const{ return _target;}
 int		AForm::getGradeToSign() const{ return _gradeToSign;}
 int		AForm::getGradeToExec() const{ return _gradeToExec;}
 bool	AForm::isSigned() const{ return _isSigned;}
@@ -64,7 +73,7 @@ void	AForm::execute(Bureaucrat const & bubu)
 	else if (this->_isSigned == false)
 		throw AForm::FormNotSignedException();
 	else
-		this->formExecute(bubu);
+		this->formExecute();
 }
 
 //exceptions
