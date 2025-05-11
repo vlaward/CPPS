@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncrombez <ncrombez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 16:31:51 by ncrombez          #+#    #+#             */
-/*   Updated: 2025/05/09 18:13:18 by ncrombez         ###   ########.fr       */
+/*   Created: 2025/05/11 19:17:19 by ncrombez          #+#    #+#             */
+/*   Updated: 2025/05/12 00:41:17 by ncrombez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#include <iostream>
 
-template<class T>
-class Array
-{
-private:
-	int	_size;
-	T	*_members;
-public:
-	Array();
-	Array(unsigned int n);
-	Array(Array const &to_cpy);
-	Array &	operator=(Array const &to_cpy);
-	~Array();
 
-	T &		operator[](int n);
-	class OutOfBoundsException : public std::exception {
-		public:
-			virtual const char*	what() const throw();
-	};
-};
+int main(){
 
-# include "Array.tpp"
-#endif
+	return 0;
+}
