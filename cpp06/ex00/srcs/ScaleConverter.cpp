@@ -42,16 +42,23 @@ static void	convertError(){
 
 int	is_numeric(std::string const &to_convert){
 	int	i = 0;
+	int alreadydot = 0;
 
 	if (to_convert[i] == '-')
 		i++;
 	if (!isdigit(to_convert[i++]))
 		return 0;
 	while (to_convert[i]){
+		if (!to_convert[i + 1] && to_convert[i] == 'f')
+			return 1;
 		if (!isdigit(to_convert[i]) && to_convert[i] != '.')
+			return 0;
+		if (to_convert[i] == '.' && 
+			(!isdigit(to_convert[i+1]) || alreadydot++ ))
 			return 0;
 		i++;
 	}
+
 	return 1;
 }
 
