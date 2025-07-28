@@ -30,7 +30,9 @@ public:
 
 	const std::string	getName() const;
 	int	getGrade() const;
-	void	changeGrade(int change);
+	void	incrementGrade(unsigned int change);
+	void	decrementGrade(unsigned int change);
+	
 	void	signForm(AForm & toSign);
 	void	executeForm(AForm & toSign);
 

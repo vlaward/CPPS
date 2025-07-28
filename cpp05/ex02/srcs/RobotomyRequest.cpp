@@ -21,6 +21,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &to_cpy) : AF
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
 void	RobotomyRequestForm::formExecute(){
+	srand(time(0));
 	std::cout << "* drilling noises *" << std::endl;
 	if (rand() % 2)
 		std::cout << this->getTarget() << " has been robotomized successfully." << std::endl;

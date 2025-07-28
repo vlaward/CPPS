@@ -32,9 +32,9 @@ int	main(){
 		Bureaucrat marie("mARIE", 150);
 
 		std::cout << bob << std::endl;
-		bob.changeGrade(-50);
+		bob.decrementGrade(50);
 		std::cout << bob << std::endl;
-		bob.changeGrade(200);
+		bob.incrementGrade(200);
 		std::cout << bob << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException){

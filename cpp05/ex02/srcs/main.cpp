@@ -12,13 +12,19 @@
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreation.hpp"
+#include "PresidentialPardon.hpp"
+#include "RobotomyRequest.hpp"
 
 int	main(){
 {
 	try{
 		Bureaucrat bob("bob", 60);
+		Bureaucrat elise("bob", 1);
 		Bureaucrat marie("Marie", 150);
 		ShrubberyCreationForm 		shrub("PATABOOM");
+		RobotomyRequestForm 		robot("Jean-Luc Picard");
+		PresidentialPardonForm 		presi("Rick");
+
 
 		std::cout << bob << std::endl;
 		std::cout << marie << std::endl;
@@ -26,6 +32,10 @@ int	main(){
 		marie.signForm(shrub);
 		bob.signForm(shrub);
 		bob.executeForm(shrub);
+		elise.signForm(robot);
+		elise.executeForm(robot);
+		elise.signForm(presi);
+		elise.executeForm(presi);
 		
 		
 	}

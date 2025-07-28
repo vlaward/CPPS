@@ -36,10 +36,15 @@ int	Bureaucrat::getGrade() const{ return _grade;}
 
 const std::string	Bureaucrat::getName() const{ return _name;}
 
-void	Bureaucrat::changeGrade(int change){
+void	Bureaucrat::incrementGrade(unsigned int change){
 	int grade = _grade - change;
 	if (grade < 1){throw Bureaucrat::GradeTooHighException();}
-	else if (grade > 150){throw Bureaucrat::GradeTooLowException();}
+	else {_grade = grade;}
+}
+
+void	Bureaucrat::decrementGrade(unsigned int change){
+	int grade = _grade + change;
+	if (grade > 150){throw Bureaucrat::GradeTooLowException();}
 	else {_grade = grade;}
 }
 

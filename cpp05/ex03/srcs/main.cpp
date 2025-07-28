@@ -15,10 +15,10 @@
 
 int	main(){
 {
+	Intern bob;
+	AForm 		*shrub = bob.makeForm("shrubbery creation", "mon_reuf");
 	try{
-		Intern bob;
 		Bureaucrat marie("Marie", 1);
-		AForm 		*shrub = bob.makeForm("shrubbery creation", "mon_reuf");
 
 
 		std::cout << marie << std::endl;
@@ -38,6 +38,7 @@ int	main(){
 			std::cout << "AForm : ben c'est trop bas mon amis" << std::endl;}
 	catch (AForm::FormNotSignedException){
 			std::cout << "AForm : l'est po signed" << std::endl;}
+	delete shrub;
 		
 }
 	return 0;

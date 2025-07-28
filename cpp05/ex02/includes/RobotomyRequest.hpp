@@ -13,7 +13,8 @@
 #ifndef ROBOTOMYREQUEST_HPP
 # define ROBOTOMYREQUEST_HPP
 
-
+# include <cstdlib>
+# include <ctime>
 # include "AForm.hpp"
 
 
